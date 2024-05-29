@@ -41,7 +41,6 @@ const getCountries = async () => {
   const res = await fetch("https://restcountries.com/v3.1/all");
   countriesData = await res.json();
 
-
   CountryElement(
     countriesData.filter((country) => {
       return (
@@ -60,7 +59,6 @@ Search.addEventListener("keyup", (e) => {
 
   Continent.value = "";
   Countries.innerHTML = "";
-
 
   if (KeySearch) {
     CountryElement(
@@ -136,7 +134,7 @@ const CountryElement = (dataProvided) => {
     const region = country.region;
     const capital = country.capital;
 
-    countryCard =`
+    countryCard = `
       <div class="card country animate__animated animate__fadeIn">
         <div class="country__image">
           <img src="${flag}" alt=${flag}" loading="lazy" />
@@ -146,9 +144,8 @@ const CountryElement = (dataProvided) => {
           <div class="card__descrition">
             <p><code>Population:</code> <span>${population}</span></p>
             <p><code>Region:</code> <span>${region}</span></p>
-            <p><code>Capital:</code> <span>${typeof capital !== "undefined"
-              ? capital[0]
-              : "no capital"
+            <p><code>Capital:</code> <span>${
+              typeof capital !== "undefined" ? capital[0] : "no capital"
             }</span></p>
           </div>
         </div>
@@ -177,3 +174,13 @@ const CountryElement = (dataProvided) => {
 };
 
 window.addEventListener("DOMContentLoaded", getCountries());
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Simulate loading delay
+  setTimeout(function () {
+    // Hide loading overlay
+    document.getElementById("loading-overlay").style.display = "none";
+    // Show content
+    document.getElementById("content").style.display = "block";
+  }, 2000); // Adjust the time as needed (in milliseconds)
+});
