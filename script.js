@@ -176,11 +176,8 @@ const CountryElement = (dataProvided) => {
 window.addEventListener("DOMContentLoaded", getCountries());
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Simulate loading delay
   setTimeout(function () {
-    // Hide loading overlay
     document.getElementById("loading-overlay").style.display = "none";
-    // Show content
     document.getElementById("content").style.display = "block";
-  }, 2000); // Adjust the time as needed (in milliseconds)
+  }, 5000);
 });
