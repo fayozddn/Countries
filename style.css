@@ -30,6 +30,10 @@ body.dark__theme {
   --White: hsl(209, 23%, 22%);
 }
 
+.body{
+  overflow-x: hidden; 
+}
+
 *,
 *::after,
 *::before {
